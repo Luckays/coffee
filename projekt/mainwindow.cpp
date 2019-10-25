@@ -85,4 +85,4 @@ void MainWindow::on_close_all_triggered()
         fav->close();
     }
 
-//end of windows %%
+//end of windows
