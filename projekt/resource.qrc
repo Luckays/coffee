@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/img">
+        <file alias="mainIconv">zrnkakava.png</file>
+        <file alias="mainIconf">Coffee_bean_transparent.png</file>
+        <file alias="mainIco">kaffeebohne_96.png</file>
+        <file alias="mainIconc">depositphotos_37523355-stock-photo-coffee-bean.jpg</file>
+        <file alias="mainIcon">depositphotos_131627312-stock-illustration-coffee-bean-vector-icon.jpg</file>
+        <file alias="Favorite">645px-Love_Heart_SVG.svg.png</file>
+    </qresource>
+    <qresource prefix="/new/prefix1"/>
+</RCC>
