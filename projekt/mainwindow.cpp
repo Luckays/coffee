@@ -86,5 +86,4 @@ void MainWindow::on_close_all_triggered()
     }
 
 //end of windows
-//last
 //end of project
