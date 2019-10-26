@@ -15,7 +15,7 @@ product_extract::~product_extract()
     delete ui;
 }
 
-/*void product_extract::on_close_clicked()
+void product_extract::on_close_clicked()
     {
         this->close();
-    }*/
+    }

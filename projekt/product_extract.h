@@ -18,6 +18,8 @@ public:
 
 private:
     Ui::product_extract *ui;
+private slots:
+    void on_close_clicked();
 };
 
 #endif // PRODUCT_EXTRACT_H

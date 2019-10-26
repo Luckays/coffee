@@ -2,6 +2,7 @@
 #include "form.h"
 #include "variety_extract.h"
 #include "place_extract.h"
+#include "settings.h"
 #include <QIcon>
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
@@ -30,6 +31,7 @@ private:
     variety_extract *va;
     place_extract *pl;
     Form *fav;
+    settings *se;
 
 private slots:
     void on_show_product_clicked();
@@ -43,7 +45,7 @@ private slots:
     void on_show_place_3_clicked();
     void on_open_favorite_triggered();
     void on_close_all_triggered();
-    void on_active_depression_triggered();
+
 };
 
 #endif // MAINWINDOW_H

@@ -35,6 +35,7 @@ FORMS += \
     mainwindow.ui \
     place_extract.ui \
     product_extract.ui \
+    settings.ui \
     variety_extract.ui
 
 # Default rules for deployment.
