@@ -43,7 +43,7 @@ private slots:
     void on_show_place_3_clicked();
     void on_open_favorite_triggered();
     void on_close_all_triggered();
-
+    void on_active_depression_triggered();
 };
 
 #endif // MAINWINDOW_H

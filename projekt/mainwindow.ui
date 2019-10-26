@@ -38,7 +38,7 @@
        <x>0</x>
        <y>0</y>
        <width>691</width>
-       <height>537</height>
+       <height>529</height>
       </rect>
      </property>
      <attribute name="label">
@@ -540,7 +540,7 @@
        <x>0</x>
        <y>0</y>
        <width>691</width>
-       <height>537</height>
+       <height>529</height>
       </rect>
      </property>
      <attribute name="label">
@@ -827,7 +827,7 @@
      <x>0</x>
      <y>0</y>
      <width>708</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuEditace">
@@ -837,12 +837,14 @@
     <addaction name="close_all"/>
     <addaction name="actionTisk"/>
     <addaction name="open_favorite"/>
+    <addaction name="active_depression_2"/>
    </widget>
    <widget class="QMenu" name="menuNastaven">
     <property name="title">
      <string>Nastavení</string>
     </property>
-    <addaction name="actionDeprese"/>
+    <addaction name="separator"/>
+    <addaction name="active_depression"/>
     <addaction name="actionKr_sn_den"/>
     <addaction name="actionNuda"/>
    </widget>
@@ -855,7 +857,7 @@
     <string>Konec</string>
    </property>
   </action>
-  <action name="actionDeprese">
+  <action name="active_depression">
    <property name="text">
     <string>Deprese</string>
    </property>
@@ -878,6 +880,11 @@
   <action name="open_favorite">
    <property name="text">
     <string>Oblíbené</string>
+   </property>
+  </action>
+  <action name="active_depression_2">
+   <property name="text">
+    <string>active_depression</string>
    </property>
   </action>
  </widget>

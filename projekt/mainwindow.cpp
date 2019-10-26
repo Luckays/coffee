@@ -13,6 +13,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     setWindowTitle("Káva");
     setWindowIcon(QIcon(":/img/mainIcon"));
+
 }
 
 MainWindow::~MainWindow()
@@ -70,11 +71,23 @@ void MainWindow::on_show_variety_3_clicked()
 void MainWindow::on_show_place_3_clicked()
 {
    pl = new place_extract();
+   QPalette p(palette());
+   p.setColor(QPalette::Background, Qt::red);
+   pl->setAutoFillBackground(true);
+   pl->setPalette(p);
    pl->show();
 }
 void MainWindow::on_open_favorite_triggered(){
     fav = new Form();
     fav->show();
+}
+void MainWindow::on_active_depression_triggered(){
+    pl = new place_extract();
+    QPalette p(palette());
+    p.setColor(QPalette::Background, Qt::red);
+    pl->setAutoFillBackground(true);
+    pl->setPalette(p);
+    pl->show();
 }
 void MainWindow::on_close_all_triggered()
     {
@@ -84,6 +97,7 @@ void MainWindow::on_close_all_triggered()
         va->close();
         fav->close();
     }
+
 
 //end of windows
 //end of project
