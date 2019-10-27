@@ -890,7 +890,16 @@
     <addaction name="actionTisk"/>
     <addaction name="open_favorite"/>
    </widget>
+   <widget class="QMenu" name="menuNastaven">
+    <property name="title">
+     <string>Nastavení</string>
+    </property>
+    <addaction name="actionNormal"/>
+    <addaction name="actionGray"/>
+    <addaction name="actionRed"/>
+   </widget>
    <addaction name="menuEditace"/>
+   <addaction name="menuNastaven"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="close_all">
@@ -926,6 +935,21 @@
   <action name="open_settings">
    <property name="text">
     <string>Nastavení</string>
+   </property>
+  </action>
+  <action name="actionNormal">
+   <property name="text">
+    <string>Normal</string>
+   </property>
+  </action>
+  <action name="actionGray">
+   <property name="text">
+    <string>Gray</string>
+   </property>
+  </action>
+  <action name="actionRed">
+   <property name="text">
+    <string>Red</string>
    </property>
   </action>
  </widget>

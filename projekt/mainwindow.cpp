@@ -256,6 +256,25 @@ void MainWindow::on_open_favorite_triggered(){
             fav->show();}
 }
 
+
+   void  MainWindow::on_actionGray_triggered()// nic moc
+    {
+       this->setStyleSheet("background-color: Gray;");
+      // ui->set_gray->setChecked(true);
+    }
+
+   void  MainWindow::on_actionNormal_triggered()// nic moc
+    {
+       this->setStyleSheet("background-color: ;");
+      // ui->set_normal->setChecked(true);
+    }
+
+   void  MainWindow::on_actionRed_triggered()// nic moc
+    {
+       this->setStyleSheet("background-color: Red;");
+      // ui->set_red->setChecked(true);
+    }
+
 void MainWindow::on_close_all_triggered()
     {
         this->close();

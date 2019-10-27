@@ -45,6 +45,9 @@ private slots:
     void on_show_place_3_clicked();
     void on_open_favorite_triggered();
     void on_close_all_triggered();
+    void on_actionGray_triggered();
+    void on_actionNormal_triggered();
+    void on_actionRed_triggered();
 
 };
 
