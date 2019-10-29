@@ -31,7 +31,6 @@ private:
     variety_extract *va;
     place_extract *pl;
     Form *fav;
-    settings *se;
 
 private slots:
     void on_show_product_clicked();
