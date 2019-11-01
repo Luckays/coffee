@@ -9,6 +9,54 @@ MainWindow::MainWindow(QWidget *parent)
 
 
     ui->setupUi(this);
+
+    QString path = "../kava.db";
+    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
+    db.setDatabaseName(path);
+    db.open();
+
+//okno produkty
+  QSqlQuery *products = new QSqlQuery;
+ products->exec("SELECT DISTINCT produkt FROM produkty");
+ QStringList product;
+ while(products->next()) // nahrani produktu
+ {
+     QString SKO = products->value(0).toString();
+     product.append(SKO);
+ }
+
+ ui->comboBox_product->clear();
+ ui->comboBox_product->addItem("");
+ ui->comboBox_product->addItems(product);
+
+ //okno odrudy
+   QSqlQuery *varieties = new QSqlQuery;
+  varieties->exec("SELECT DISTINCT odruda FROM odrudy");
+  QStringList variety;
+  while(varieties->next()) // nahrani produktu
+  {
+      QString SKO = varieties->value(0).toString();
+      variety.append(SKO);
+  }
+
+  ui->comboBox_variety->clear();
+  ui->comboBox_variety->addItem("");
+  ui->comboBox_variety->addItems(variety);
+
+  //okno oblast
+    QSqlQuery *places = new QSqlQuery;
+   places->exec("SELECT DISTINCT oblast FROM oblasti");
+   QStringList place;
+   while(places->next()) // nahrani produktu
+   {
+       QString SKO = places->value(0).toString();
+       place.append(SKO);
+   }
+
+   ui->comboBox_place->clear();
+   ui->comboBox_place->addItem("");
+   ui->comboBox_place->addItems(place);
+
 ui->set_normal->setChecked(true);
 
     setWindowTitle("Káva");
@@ -57,7 +105,7 @@ void MainWindow::on_show_variety_clicked()
 
 
             va = new variety_extract();
-            pr->show();}
+            va->show();}
     else if(ui->set_red->isChecked()){
             va = new variety_extract();
             QPalette p(palette());
@@ -129,7 +177,8 @@ void MainWindow::on_show_variety_2_clicked()
 
 
             va = new variety_extract();
-            pr->show();}
+            va->show();}
+
     else if(ui->set_red->isChecked()){
             va = new variety_extract();
             QPalette p(palette());
@@ -200,7 +249,7 @@ void MainWindow::on_show_variety_3_clicked()
 
 
             va = new variety_extract();
-            pr->show();}
+            va->show();}
     else if(ui->set_red->isChecked()){
             va = new variety_extract();
             QPalette p(palette());
@@ -260,19 +309,19 @@ void MainWindow::on_open_favorite_triggered(){
    void  MainWindow::on_actionGray_triggered()// nic moc
     {
        this->setStyleSheet("background-color: Gray;");
-      // ui->set_gray->setChecked(true);
+       ui->set_gray->setChecked(true);
     }
 
    void  MainWindow::on_actionNormal_triggered()// nic moc
     {
        this->setStyleSheet("background-color: ;");
-      // ui->set_normal->setChecked(true);
+       ui->set_normal->setChecked(true);
     }
 
    void  MainWindow::on_actionRed_triggered()// nic moc
     {
        this->setStyleSheet("background-color: Red;");
-      // ui->set_red->setChecked(true);
+      ui->set_red->setChecked(true);
     }
 
 void MainWindow::on_close_all_triggered()

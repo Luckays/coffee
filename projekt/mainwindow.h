@@ -4,6 +4,11 @@
 #include "place_extract.h"
 #include "settings.h"
 #include <QIcon>
+#include <QtSql>
+#include <QSqlQuery>
+#include <QSqlDatabase>
+#include <QSqlTableModel>
+
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 

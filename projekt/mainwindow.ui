@@ -562,13 +562,13 @@
        <cursorShape>PointingHandCursor</cursorShape>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
         <string>Produkt</string>
        </attribute>
-       <widget class="QComboBox" name="comboBox">
+       <widget class="QComboBox" name="comboBox_product">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -623,7 +623,7 @@
        <attribute name="title">
         <string>Oblast</string>
        </attribute>
-       <widget class="QComboBox" name="comboBox_2">
+       <widget class="QComboBox" name="comboBox_place">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -722,7 +722,7 @@
        <attribute name="title">
         <string>Odrůda</string>
        </attribute>
-       <widget class="QComboBox" name="comboBox_3">
+       <widget class="QComboBox" name="comboBox_variety">
         <property name="geometry">
          <rect>
           <x>10</x>
