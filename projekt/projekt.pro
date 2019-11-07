@@ -16,7 +16,6 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    dialog.cpp \
     form.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -25,7 +24,6 @@ SOURCES += \
     variety_extract.cpp
 
 HEADERS += \
-    dialog.h \
     form.h \
     mainwindow.h \
     place_extract.h \
@@ -33,7 +31,6 @@ HEADERS += \
     variety_extract.h
 
 FORMS += \
-    dialog.ui \
     form.ui \
     mainwindow.ui \
     place_extract.ui \

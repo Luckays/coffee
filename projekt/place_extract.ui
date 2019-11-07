@@ -1,110 +1,144 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>place_extract</class>
- <widget class="QWidget" name="place_extract">
+ <widget class="QDialog" name="place_extract">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>411</height>
+    <width>386</width>
+    <height>362</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Dialog</string>
   </property>
-  <widget class="QLineEdit" name="lineEdit">
+  <widget class="QPushButton" name="close">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>330</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Zavřít</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_place">
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>30</y>
-     <width>351</width>
-     <height>22</height>
+     <y>40</y>
+     <width>341</width>
+     <height>31</height>
     </rect>
    </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit_2">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>80</y>
-     <width>71</width>
-     <height>22</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit_3">
-   <property name="geometry">
-    <rect>
-     <x>230</x>
-     <y>80</y>
-     <width>141</width>
-     <height>22</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit_4">
-   <property name="geometry">
-    <rect>
-     <x>232</x>
-     <y>130</y>
-     <width>141</width>
-     <height>22</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit_5">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>130</y>
-     <width>141</width>
-     <height>22</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit_6">
-   <property name="geometry">
-    <rect>
-     <x>90</x>
-     <y>80</y>
-     <width>71</width>
-     <height>22</height>
-    </rect>
+   <property name="readOnly">
+    <bool>true</bool>
    </property>
   </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
      <x>170</x>
-     <y>10</y>
-     <width>55</width>
-     <height>16</height>
+     <y>20</y>
+     <width>47</width>
+     <height>13</height>
     </rect>
    </property>
    <property name="text">
     <string>Oblast</string>
    </property>
   </widget>
+  <widget class="QLineEdit" name="lineEdit_od">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>110</y>
+     <width>71</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_clima">
+   <property name="geometry">
+    <rect>
+     <x>222</x>
+     <y>110</y>
+     <width>141</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_country">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>170</y>
+     <width>141</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_do">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>110</y>
+     <width>71</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_production">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>170</y>
+     <width>141</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+   <property name="clearButtonEnabled">
+    <bool>false</bool>
+   </property>
+  </widget>
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>60</y>
-     <width>101</width>
+     <x>20</x>
+     <y>70</y>
+     <width>141</width>
      <height>21</height>
     </rect>
    </property>
    <property name="text">
-    <string>Nadmořská výška</string>
+    <string>Nadmořská výška [m]</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>80</x>
-     <y>110</y>
-     <width>55</width>
+     <x>70</x>
+     <y>150</y>
+     <width>41</width>
      <height>16</height>
     </rect>
    </property>
@@ -116,52 +150,52 @@
    <property name="geometry">
     <rect>
      <x>250</x>
-     <y>110</y>
-     <width>111</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Roční produkce [t]</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_5">
-   <property name="geometry">
-    <rect>
-     <x>260</x>
-     <y>60</y>
-     <width>81</width>
-     <height>20</height>
+     <y>90</y>
+     <width>91</width>
+     <height>16</height>
     </rect>
    </property>
    <property name="text">
     <string>Klimatický pás</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_6">
+  <widget class="QLabel" name="label_5">
    <property name="geometry">
     <rect>
-     <x>180</x>
-     <y>250</y>
-     <width>55</width>
+     <x>230</x>
+     <y>150</y>
+     <width>121</width>
      <height>16</height>
     </rect>
    </property>
    <property name="text">
-    <string>Mapa</string>
+    <string>Roční produkce [t]</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="close">
+  <widget class="QLabel" name="label_6">
    <property name="geometry">
     <rect>
-     <x>290</x>
-     <y>370</y>
-     <width>93</width>
-     <height>28</height>
+     <x>50</x>
+     <y>90</y>
+     <width>16</width>
+     <height>16</height>
     </rect>
    </property>
    <property name="text">
-    <string>Zavřít</string>
+    <string>od</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_7">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>90</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>do</string>
    </property>
   </widget>
  </widget>

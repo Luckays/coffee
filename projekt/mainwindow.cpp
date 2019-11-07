@@ -112,7 +112,8 @@ MainWindow::~MainWindow()
 void MainWindow::on_show_product_clicked()
 {if(ui->set_gray->isChecked())
     {
-        pr = new product_extract();
+        QString H = ui->lineEdit_pr->text();
+        pr = new product_extract(H.toInt());
             QPalette p(palette());
             p.setColor(QPalette::Background, Qt::gray);
             pr->setAutoFillBackground(true);
@@ -121,13 +122,15 @@ void MainWindow::on_show_product_clicked()
 }else if(ui->set_normal->isChecked()){
 
 
-        pr = new product_extract();
+        QString H = ui->lineEdit_pr->text();
+        pr = new product_extract(H.toInt());
         pr->show();
 
     }
 
 else if(ui->set_red->isChecked()){
-        pr = new product_extract();
+        QString H = ui->lineEdit_pr->text();
+        pr = new product_extract(H.toInt());
         QPalette p(palette());
         p.setColor(QPalette::Background, Qt::red);
         pr->setAutoFillBackground(true);
@@ -138,7 +141,8 @@ void MainWindow::on_show_variety_clicked()
 {
     if(ui->set_gray->isChecked())
         {
-            va = new variety_extract();
+        QString H = ui->lineEdit_va->text();
+                   va = new variety_extract(H.toInt());
                 QPalette p(palette());
                 p.setColor(QPalette::Background, Qt::gray);
                 va->setAutoFillBackground(true);
@@ -147,10 +151,12 @@ void MainWindow::on_show_variety_clicked()
     }else if(ui->set_normal->isChecked()){
 
 
-            va = new variety_extract();
+        QString H = ui->lineEdit_va->text();
+                   va = new variety_extract(H.toInt());
             va->show();}
     else if(ui->set_red->isChecked()){
-            va = new variety_extract();
+        QString H = ui->lineEdit_va->text();
+                   va = new variety_extract(H.toInt());
             QPalette p(palette());
             p.setColor(QPalette::Background, Qt::red);
             va->setAutoFillBackground(true);
@@ -162,7 +168,8 @@ void MainWindow::on_show_place_clicked()
 {
     if(ui->set_gray->isChecked())
         {
-            pl = new place_extract();
+        QString H = ui->lineEdit_pl->text();
+               pl = new place_extract(H.toInt());
                 QPalette p(palette());
                 p.setColor(QPalette::Background, Qt::gray);
                 pl->setAutoFillBackground(true);
@@ -171,10 +178,12 @@ void MainWindow::on_show_place_clicked()
     }else if(ui->set_normal->isChecked()){
 
 
-            pl = new place_extract();
+        QString H = ui->lineEdit_pl->text();
+                    pl = new place_extract(H.toInt());
             pl->show();}
     else if(ui->set_red->isChecked()){
-            pl = new place_extract();
+        QString H = ui->lineEdit_pl->text();
+                    pl = new place_extract(H.toInt());
             QPalette p(palette());
             p.setColor(QPalette::Background, Qt::red);
             pl->setAutoFillBackground(true);
@@ -186,7 +195,8 @@ void MainWindow::on_show_product_2_clicked()//tab place
 {
     if(ui->set_gray->isChecked())
         {
-            pr = new product_extract();
+        QString H = ui->lineEdit_pr2->text();
+        pr = new product_extract(H.toInt());
                 QPalette p(palette());
                 p.setColor(QPalette::Background, Qt::gray);
                 pr->setAutoFillBackground(true);
@@ -195,10 +205,12 @@ void MainWindow::on_show_product_2_clicked()//tab place
     }else if(ui->set_normal->isChecked()){
 
 
-            pr = new product_extract();
+        QString H = ui->lineEdit_pr2->text();
+        pr = new product_extract(H.toInt());
             pr->show();}
     else if(ui->set_red->isChecked()){
-            pr = new product_extract();
+        QString H = ui->lineEdit_pr2->text();
+        pr = new product_extract(H.toInt());
             QPalette p(palette());
             p.setColor(QPalette::Background, Qt::red);
             pr->setAutoFillBackground(true);
@@ -210,7 +222,8 @@ void MainWindow::on_show_variety_2_clicked()
 {
     if(ui->set_gray->isChecked())
         {
-            va = new variety_extract();
+        QString H = ui->lineEdit_va2->text();
+                   va = new variety_extract(H.toInt());
                 QPalette p(palette());
                 p.setColor(QPalette::Background, Qt::gray);
                 va->setAutoFillBackground(true);
@@ -219,11 +232,15 @@ void MainWindow::on_show_variety_2_clicked()
     }else if(ui->set_normal->isChecked()){
 
 
-            va = new variety_extract();
+        QString H = ui->lineEdit_va2->text();
+                   va = new variety_extract(H.toInt());
+
             va->show();}
 
     else if(ui->set_red->isChecked()){
-            va = new variety_extract();
+        QString H = ui->lineEdit_va2->text();
+                   va = new variety_extract(H.toInt());
+
             QPalette p(palette());
             p.setColor(QPalette::Background, Qt::red);
             va->setAutoFillBackground(true);
@@ -234,8 +251,8 @@ void MainWindow::on_show_variety_2_clicked()
 void MainWindow::on_show_place_2_clicked()
 {
     if(ui->set_gray->isChecked())
-        {
-            pl = new place_extract();
+        { QString H = ui->lineEdit_pl2->text();
+            pl = new place_extract(H.toInt());
                 QPalette p(palette());
                 p.setColor(QPalette::Background, Qt::gray);
                 pl->setAutoFillBackground(true);
@@ -243,11 +260,15 @@ void MainWindow::on_show_place_2_clicked()
                 pl->show();
     }else if(ui->set_normal->isChecked()){
 
+        QString H = ui->lineEdit_pl2->text();
+    //    Dialog place_extract(H.toInt()); //(ID.toInt())
 
-            pl = new place_extract();
+
+           pl = new place_extract(H.toInt());
             pl->show();}
     else if(ui->set_red->isChecked()){
-            pl = new place_extract();
+         QString H = ui->lineEdit_pl2->text();
+            pl = new place_extract(H.toInt());
             QPalette p(palette());
             p.setColor(QPalette::Background, Qt::red);
             pl->setAutoFillBackground(true);
@@ -258,7 +279,8 @@ void MainWindow::on_show_product_3_clicked()//tab variety
 {
     if(ui->set_gray->isChecked())
         {
-            pr = new product_extract();
+        QString H = ui->lineEdit_pr3->text();
+        pr = new product_extract(H.toInt());
                 QPalette p(palette());
                 p.setColor(QPalette::Background, Qt::gray);
                 pr->setAutoFillBackground(true);
@@ -267,10 +289,12 @@ void MainWindow::on_show_product_3_clicked()//tab variety
     }else if(ui->set_normal->isChecked()){
 
 
-            pr = new product_extract();
+        QString H = ui->lineEdit_pr3->text();
+        pr = new product_extract(H.toInt());
             pr->show();}
     else if(ui->set_red->isChecked()){
-            pr = new product_extract();
+            QString H = ui->lineEdit_pr3->text();
+            pr = new product_extract(H.toInt());
             QPalette p(palette());
             p.setColor(QPalette::Background, Qt::red);
             pr->setAutoFillBackground(true);
@@ -281,8 +305,10 @@ void MainWindow::on_show_product_3_clicked()//tab variety
 void MainWindow::on_show_variety_3_clicked()
 {
     if(ui->set_gray->isChecked())
-        {
-            va = new variety_extract();
+
+        {  QString H = ui->lineEdit_va3->text();
+            va = new variety_extract(H.toInt());
+
                 QPalette p(palette());
                 p.setColor(QPalette::Background, Qt::gray);
                 va->setAutoFillBackground(true);
@@ -291,10 +317,14 @@ void MainWindow::on_show_variety_3_clicked()
     }else if(ui->set_normal->isChecked()){
 
 
-            va = new variety_extract();
+        QString H = ui->lineEdit_va3->text();
+                   va = new variety_extract(H.toInt());
+
             va->show();}
     else if(ui->set_red->isChecked()){
-            va = new variety_extract();
+        QString H = ui->lineEdit_va3->text();
+                   va = new variety_extract(H.toInt());
+
             QPalette p(palette());
             p.setColor(QPalette::Background, Qt::red);
             va->setAutoFillBackground(true);
@@ -306,7 +336,8 @@ void MainWindow::on_show_place_3_clicked()
 {
     if(ui->set_gray->isChecked())
         {
-            pl = new place_extract();
+        QString H = ui->lineEdit_pl3->text();
+                    pl = new place_extract(H.toInt());
                 QPalette p(palette());
                 p.setColor(QPalette::Background, Qt::gray);
                 pl->setAutoFillBackground(true);
@@ -315,10 +346,12 @@ void MainWindow::on_show_place_3_clicked()
     }else if(ui->set_normal->isChecked()){
 
 
-            pl = new place_extract();
+        QString H = ui->lineEdit_pl3->text();
+                    pl = new place_extract(H.toInt());
             pl->show();}
     else if(ui->set_red->isChecked()){
-            pl = new place_extract();
+        QString H = ui->lineEdit_pl3->text();
+                    pl = new place_extract(H.toInt());
             QPalette p(palette());
             p.setColor(QPalette::Background, Qt::red);
             pl->setAutoFillBackground(true);
@@ -369,20 +402,14 @@ void MainWindow::on_open_favorite_triggered(){
 
    void MainWindow::on_comboBox_place_currentTextChanged(const QString &place)
    {
-       QString vyber_od="SELECT DISTINCT odrudy.odruda AS Odrůda, odrudy.chut_odrudy AS Chuť FROM produkty JOIN odrudy on odrudy.odruda_id = produkty.odruda_id JOIN oblasti on produkty.oblast_id = oblasti.oblast_id WHERE oblasti.oblast = '"+place+"'";
-
-       QSqlQuery* uni_q = new QSqlQuery;
-       uni_q -> prepare(vyber_od);
-       uni_q -> exec();
-
-       model_variety->setQuery(*uni_q);
+       QString vyber_od="SELECT DISTINCT odrudy.odruda_id AS ID, odrudy.odruda AS Odrůda FROM produkty JOIN odrudy on odrudy.odruda_id = produkty.odruda_id JOIN oblasti on produkty.oblast_id = oblasti.oblast_id WHERE oblasti.oblast = '"+place+"'";
 
        ui->place_variety_table->setModel(model_variety);
        ui->place_variety_table->show();
        ui->place_variety_table->resizeColumnsToContents();
 
 
-       QString vyber_pr="SELECT DISTINCT produkty.produkt AS Produkt, produkty.produkt_id FROM produkty JOIN odrudy on odrudy.odruda_id = produkty.odruda_id JOIN oblasti on produkty.oblast_id = oblasti.oblast_id WHERE oblasti.oblast = '"+place+"'";
+       QString vyber_pr="SELECT DISTINCT produkty.produkt_id AS ID, produkty.produkt AS Produkt FROM produkty JOIN odrudy on odrudy.odruda_id = produkty.odruda_id JOIN oblasti on produkty.oblast_id = oblasti.oblast_id WHERE oblasti.oblast = '"+place+"'";
        QSqlQuery* uni_p = new QSqlQuery;
        uni_p -> prepare(vyber_pr);
        uni_p-> exec();
@@ -412,7 +439,7 @@ void MainWindow::on_close_all_triggered()
 
 void MainWindow::on_comboBox_variety_currentTextChanged(const QString &variety)
 {
-    QString vyber_od="SELECT DISTINCT oblasti.oblast as Oblast FROM produkty JOIN odrudy on odrudy.odruda_id = produkty.odruda_id JOIN oblasti on produkty.oblast_id = oblasti.oblast_id WHERE odrudy.odruda = '"+variety+"'";
+    QString vyber_od="SELECT DISTINCT oblasti.oblast_id AS ID, oblasti.oblast as Oblast FROM produkty JOIN odrudy on odrudy.odruda_id = produkty.odruda_id JOIN oblasti on produkty.oblast_id = oblasti.oblast_id WHERE odrudy.odruda = '"+variety+"'";
     QSqlQuery* uni_q = new QSqlQuery;
     uni_q -> prepare(vyber_od);
     uni_q -> exec();
@@ -424,7 +451,7 @@ void MainWindow::on_comboBox_variety_currentTextChanged(const QString &variety)
     ui->variety_place_table->resizeColumnsToContents();
 
 
-    QString vyber_pr="SELECT DISTINCT produkty.produkt AS Produkt FROM produkty JOIN odrudy on odrudy.odruda_id = produkty.odruda_id JOIN oblasti on produkty.oblast_id = oblasti.oblast_id WHERE odrudy.odruda = '"+variety+"'";
+    QString vyber_pr="SELECT DISTINCT produkty.produkt_id AS ID, produkty.produkt AS Produkt FROM produkty JOIN odrudy on odrudy.odruda_id = produkty.odruda_id JOIN oblasti on produkty.oblast_id = oblasti.oblast_id WHERE odrudy.odruda = '"+variety+"'";
     QSqlQuery* uni_p = new QSqlQuery;
     uni_p -> prepare(vyber_pr);
     uni_p-> exec();
@@ -441,10 +468,6 @@ void MainWindow::on_comboBox_variety_currentTextChanged(const QString &variety)
 
 void MainWindow::on_make_favorite_clicked()//tab variety
 {
-   QString H = ui->lineEdit_pr->text();
-   Dialog Dialog(H.toInt()); //(ID.toInt())
-   Dialog.setModal(true);
-   Dialog.exec();
 
 }
  /*void MainWindow::on_place_variety_table_activated(const QModelIndex &index)

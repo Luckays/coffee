@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QLineEdit" name="lineEdit">
+  <widget class="QLineEdit" name="lineEdit_var">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -22,8 +22,11 @@
      <height>22</height>
     </rect>
    </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_2">
+  <widget class="QLineEdit" name="lineEdit_origin">
    <property name="geometry">
     <rect>
      <x>210</x>
@@ -32,8 +35,11 @@
      <height>22</height>
     </rect>
    </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_3">
+  <widget class="QLineEdit" name="lineEdit_region">
    <property name="geometry">
     <rect>
      <x>212</x>
@@ -42,8 +48,11 @@
      <height>22</height>
     </rect>
    </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_4">
+  <widget class="QLineEdit" name="lineEdit_taste">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -51,6 +60,9 @@
      <width>161</width>
      <height>22</height>
     </rect>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
    </property>
   </widget>
   <widget class="QTextEdit" name="textEdit">
@@ -61,6 +73,9 @@
      <width>351</width>
      <height>71</height>
     </rect>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
    </property>
   </widget>
   <widget class="QLabel" name="label">

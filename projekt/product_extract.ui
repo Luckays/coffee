@@ -32,7 +32,7 @@
     <string>Zavřít</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_2">
+  <widget class="QLineEdit" name="lineEdit_proc">
    <property name="geometry">
     <rect>
      <x>50</x>
@@ -40,6 +40,9 @@
      <width>151</width>
      <height>22</height>
     </rect>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
    </property>
   </widget>
   <widget class="QTextEdit" name="textEdit">
@@ -50,6 +53,9 @@
      <width>371</width>
      <height>71</height>
     </rect>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
    </property>
   </widget>
   <widget class="QLabel" name="label">
@@ -65,7 +71,7 @@
     <string>img intenzita</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_4">
+  <widget class="QLineEdit" name="lineEdit_var">
    <property name="geometry">
     <rect>
      <x>50</x>
@@ -74,8 +80,11 @@
      <height>22</height>
     </rect>
    </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_5">
+  <widget class="QLineEdit" name="lineEdit_place">
    <property name="geometry">
     <rect>
      <x>270</x>
@@ -84,8 +93,11 @@
      <height>22</height>
     </rect>
    </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_6">
+  <widget class="QLineEdit" name="lineEdit_roast">
    <property name="geometry">
     <rect>
      <x>270</x>
@@ -93,6 +105,12 @@
      <width>151</width>
      <height>22</height>
     </rect>
+   </property>
+   <property name="echoMode">
+    <enum>QLineEdit::Normal</enum>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
    </property>
   </widget>
   <widget class="QLabel" name="label_3">
@@ -111,9 +129,9 @@
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>80</x>
+     <x>100</x>
      <y>80</y>
-     <width>81</width>
+     <width>71</width>
      <height>16</height>
     </rect>
    </property>
@@ -124,9 +142,9 @@
   <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
-     <x>320</x>
+     <x>330</x>
      <y>80</y>
-     <width>81</width>
+     <width>51</width>
      <height>16</height>
     </rect>
    </property>
@@ -137,7 +155,7 @@
   <widget class="QLabel" name="label_5">
    <property name="geometry">
     <rect>
-     <x>90</x>
+     <x>110</x>
      <y>130</y>
      <width>55</width>
      <height>16</height>
@@ -150,9 +168,9 @@
   <widget class="QLabel" name="label_6">
    <property name="geometry">
     <rect>
-     <x>320</x>
+     <x>330</x>
      <y>130</y>
-     <width>55</width>
+     <width>41</width>
      <height>16</height>
     </rect>
    </property>
@@ -163,9 +181,9 @@
   <widget class="QLabel" name="label_7">
    <property name="geometry">
     <rect>
-     <x>80</x>
+     <x>110</x>
      <y>180</y>
-     <width>81</width>
+     <width>51</width>
      <height>16</height>
     </rect>
    </property>
@@ -176,14 +194,14 @@
   <widget class="QLabel" name="label_8">
    <property name="geometry">
     <rect>
-     <x>310</x>
+     <x>330</x>
      <y>180</y>
-     <width>81</width>
+     <width>51</width>
      <height>21</height>
     </rect>
    </property>
    <property name="text">
-    <string>Kysletost</string>
+    <string>Kyselost</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_9">
@@ -212,14 +230,17 @@
     <string>Produkt</string>
    </property>
   </widget>
-  <widget class="QTableView" name="table_produkt">
+  <widget class="QLineEdit" name="lineEdit_product">
    <property name="geometry">
     <rect>
-     <x>50</x>
+     <x>52</x>
      <y>40</y>
      <width>371</width>
-     <height>31</height>
+     <height>20</height>
     </rect>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
    </property>
   </widget>
  </widget>
