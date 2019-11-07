@@ -6,8 +6,10 @@ place_extract::place_extract(QWidget *parent)
     ui(new Ui::place_extract)
 {
     ui->setupUi(this);
+    this->setStyleSheet("background-color: ;");
     setWindowTitle("Výpis Odrůdy");
     setWindowIcon(QIcon(":/img/mainIcon"));
+
 }
 
 place_extract::~place_extract()

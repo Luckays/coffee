@@ -4,7 +4,8 @@
         <file alias="mainIconf">Coffee_bean_transparent.png</file>
         <file alias="mainIco">kaffeebohne_96.png</file>
         <file alias="mainIconc">depositphotos_37523355-stock-photo-coffee-bean.jpg</file>
-        <file alias="mainIcon">depositphotos_131627312-stock-illustration-coffee-bean-vector-icon.jpg</file>
+        <file alias="mainIconuk">depositphotos_131627312-stock-illustration-coffee-bean-vector-icon.jpg</file>
         <file alias="Favorite">645px-Love_Heart_SVG.svg.png</file>
+        <file alias="mainIcon">69686213_2664276680299156_4339327440514973696_n.jpg</file>
     </qresource>
 </RCC>

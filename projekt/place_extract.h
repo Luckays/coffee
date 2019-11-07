@@ -1,7 +1,7 @@
 #ifndef PLACE_EXTRACT_H
 #define PLACE_EXTRACT_H
 #include <QIcon>
-#include <QWidget>
+#include <QDialog>
 
 namespace Ui {
 class place_extract;

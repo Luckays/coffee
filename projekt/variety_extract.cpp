@@ -6,6 +6,7 @@ variety_extract::variety_extract(QWidget *parent) :
     ui(new Ui::variety_extract)
 {
     ui->setupUi(this);
+    this->setStyleSheet("background-color: ;");
     setWindowTitle("Výpis Odrůdy");
     setWindowIcon(QIcon(":/img/mainIcon"));
 }

@@ -1,7 +1,7 @@
 #ifndef PRODUCT_EXTRACT_H
 #define PRODUCT_EXTRACT_H
 #include <QIcon>
-#include <QWidget>
+#include <QDialog>
 
 namespace Ui {
 class product_extract;
@@ -18,6 +18,8 @@ public:
 
 private:
     Ui::product_extract *ui;
+
+
 private slots:
     void on_close_clicked();
 };

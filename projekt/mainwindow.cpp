@@ -6,8 +6,6 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 , ui(new Ui::MainWindow)
 {
-
-
     ui->setupUi(this);
 
     QString path = "../kava.db";
@@ -38,10 +36,30 @@ MainWindow::MainWindow(QWidget *parent)
       QString SKO = varieties->value(0).toString();
       variety.append(SKO);
   }
+  model_place = new QSqlTableModel(this);
+  model_place ->setQuery("SELECT oblast FROM oblasti");
+
+
+
+   ui->variety_place_table->setModel(model_place);
+   ui->variety_place_table->show();
+   ui->variety_place_table->resizeColumnsToContents();
+
+
+   model_product2 = new QSqlTableModel(this);
+   model_product2 -> setQuery("SELECT produkt FROM produkty");
+
+
+
+   ui->variety_product_table->setModel(model_product2);
+   ui->variety_product_table->show();
+   ui->variety_product_table->resizeColumnsToContents();
 
   ui->comboBox_variety->clear();
   ui->comboBox_variety->addItem("");
   ui->comboBox_variety->addItems(variety);
+
+
 
   //okno oblast
     QSqlQuery *places = new QSqlQuery;
@@ -52,11 +70,33 @@ MainWindow::MainWindow(QWidget *parent)
        QString SKO = places->value(0).toString();
        place.append(SKO);
    }
+   model_variety = new QSqlTableModel(this);
+   model_variety ->setQuery("SELECT odruda FROM odrudy");
+
+
+
+    ui->place_variety_table->setModel(model_variety);
+    ui->place_variety_table->show();
+    ui->place_variety_table->resizeColumnsToContents();
+
+
+    model_product = new QSqlTableModel(this);
+    model_product -> setQuery("SELECT produkt FROM produkty");
+
+
+
+    ui->place_product_table->setModel(model_product);
+    ui->place_product_table->show();
+    ui->place_product_table->resizeColumnsToContents();
 
    ui->comboBox_place->clear();
    ui->comboBox_place->addItem("");
    ui->comboBox_place->addItems(place);
 
+
+   //nastaveni
+
+this->setStyleSheet("background-color: ;");
 ui->set_normal->setChecked(true);
 
     setWindowTitle("Káva");
@@ -82,7 +122,10 @@ void MainWindow::on_show_product_clicked()
 
 
         pr = new product_extract();
-        pr->show();}
+        pr->show();
+
+    }
+
 else if(ui->set_red->isChecked()){
         pr = new product_extract();
         QPalette p(palette());
@@ -324,6 +367,40 @@ void MainWindow::on_open_favorite_triggered(){
       ui->set_red->setChecked(true);
     }
 
+   void MainWindow::on_comboBox_place_currentTextChanged(const QString &place)
+   {
+       QString vyber_od="SELECT DISTINCT odrudy.odruda AS Odrůda, odrudy.chut_odrudy AS Chuť FROM produkty JOIN odrudy on odrudy.odruda_id = produkty.odruda_id JOIN oblasti on produkty.oblast_id = oblasti.oblast_id WHERE oblasti.oblast = '"+place+"'";
+
+       QSqlQuery* uni_q = new QSqlQuery;
+       uni_q -> prepare(vyber_od);
+       uni_q -> exec();
+
+       model_variety->setQuery(*uni_q);
+
+       ui->place_variety_table->setModel(model_variety);
+       ui->place_variety_table->show();
+       ui->place_variety_table->resizeColumnsToContents();
+
+
+       QString vyber_pr="SELECT DISTINCT produkty.produkt AS Produkt, produkty.produkt_id FROM produkty JOIN odrudy on odrudy.odruda_id = produkty.odruda_id JOIN oblasti on produkty.oblast_id = oblasti.oblast_id WHERE oblasti.oblast = '"+place+"'";
+       QSqlQuery* uni_p = new QSqlQuery;
+       uni_p -> prepare(vyber_pr);
+       uni_p-> exec();
+
+       model_product->setQuery(*uni_p);
+
+       ui->place_product_table->setModel(model_product);
+       ui->place_product_table->show();
+       ui->place_product_table->resizeColumnsToContents();
+
+
+
+   }
+
+
+
+
+
 void MainWindow::on_close_all_triggered()
     {
         this->close();
@@ -332,6 +409,60 @@ void MainWindow::on_close_all_triggered()
         va->close();
         fav->close();
     }
+
+void MainWindow::on_comboBox_variety_currentTextChanged(const QString &variety)
+{
+    QString vyber_od="SELECT DISTINCT oblasti.oblast as Oblast FROM produkty JOIN odrudy on odrudy.odruda_id = produkty.odruda_id JOIN oblasti on produkty.oblast_id = oblasti.oblast_id WHERE odrudy.odruda = '"+variety+"'";
+    QSqlQuery* uni_q = new QSqlQuery;
+    uni_q -> prepare(vyber_od);
+    uni_q -> exec();
+
+    model_place->setQuery(*uni_q);
+
+    ui->variety_place_table->setModel(model_place);
+    ui->variety_place_table->show();
+    ui->variety_place_table->resizeColumnsToContents();
+
+
+    QString vyber_pr="SELECT DISTINCT produkty.produkt AS Produkt FROM produkty JOIN odrudy on odrudy.odruda_id = produkty.odruda_id JOIN oblasti on produkty.oblast_id = oblasti.oblast_id WHERE odrudy.odruda = '"+variety+"'";
+    QSqlQuery* uni_p = new QSqlQuery;
+    uni_p -> prepare(vyber_pr);
+    uni_p-> exec();
+
+    model_product2->setQuery(*uni_p);
+
+    ui->variety_product_table->setModel(model_product2);
+    ui->variety_product_table->show();
+    ui->variety_product_table->resizeColumnsToContents();
+
+
+
+}
+
+void MainWindow::on_make_favorite_clicked()//tab variety
+{
+   QString H = ui->lineEdit_pr->text();
+   Dialog Dialog(H.toInt()); //(ID.toInt())
+   Dialog.setModal(true);
+   Dialog.exec();
+
+}
+ /*void MainWindow::on_place_variety_table_activated(const QModelIndex &index)
+ {
+     QString vybrane = ui->place_variety_table->model()->data(index).toString();
+QString podminka = "odruda = '"+vybrane+"'";
+     QString productvyber = "SELECT DISTINCT produkty.produkt AS Produkt FROM produkty";
+
+     QSqlQuery *queryy = new QSqlQuery();
+    // queryy -> clear();
+     queryy -> prepare(productvyber);
+     queryy -> exec();
+     model_variety -> setQuery(*queryy);
+     ui->place_variety_table->setModel(model_variety);
+     ui->variety_product_table->show();
+     ui->variety_product_table->resizeColumnsToContents();
+
+ }*/
 
 
 //end of windows

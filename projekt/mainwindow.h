@@ -2,7 +2,7 @@
 #include "form.h"
 #include "variety_extract.h"
 #include "place_extract.h"
-#include "settings.h"
+#include "dialog.h"
 #include <QIcon>
 #include <QtSql>
 #include <QSqlQuery>
@@ -36,11 +36,17 @@ private:
     variety_extract *va;
     place_extract *pl;
     Form *fav;
+   QSqlQueryModel * model_variety;
+    QSqlQueryModel * model_product;
+      QSqlQueryModel * model_product2;
+    QSqlQueryModel *model_place ;
+
 
 private slots:
     void on_show_product_clicked();
     void on_show_variety_clicked();
     void on_show_place_clicked();
+    void on_make_favorite_clicked();
     void on_show_product_2_clicked();
     void on_show_variety_2_clicked();
     void on_show_place_2_clicked();
@@ -52,7 +58,9 @@ private slots:
     void on_actionGray_triggered();
     void on_actionNormal_triggered();
     void on_actionRed_triggered();
-
+    void on_comboBox_place_currentTextChanged(const QString &place);
+    void on_comboBox_variety_currentTextChanged(const QString &variety);
+   // void on_place_variety_table_activated(const QModelIndex &index);
 };
 
 #endif // MAINWINDOW_H

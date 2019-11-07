@@ -1,7 +1,7 @@
 #ifndef VARIETY_EXTRACT_H
 #define VARIETY_EXTRACT_H
 #include <QIcon>
-#include <QWidget>
+#include <QDialog>
 
 namespace Ui {
 class variety_extract;

@@ -38,7 +38,7 @@
        <x>0</x>
        <y>0</y>
        <width>691</width>
-       <height>529</height>
+       <height>537</height>
       </rect>
      </property>
      <attribute name="label">
@@ -540,7 +540,7 @@
        <x>0</x>
        <y>0</y>
        <width>691</width>
-       <height>529</height>
+       <height>537</height>
       </rect>
      </property>
      <attribute name="label">
@@ -644,10 +644,10 @@
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout">
          <item>
-          <widget class="QTableView" name="tableView_2"/>
+          <widget class="QTableView" name="place_variety_table"/>
          </item>
          <item>
-          <widget class="QTableView" name="tableView_3"/>
+          <widget class="QTableView" name="place_product_table"/>
          </item>
         </layout>
        </widget>
@@ -717,6 +717,16 @@
          </item>
         </layout>
        </widget>
+       <widget class="QLineEdit" name="lineEdit_pr">
+        <property name="geometry">
+         <rect>
+          <x>230</x>
+          <y>50</y>
+          <width>113</width>
+          <height>20</height>
+         </rect>
+        </property>
+       </widget>
       </widget>
       <widget class="QWidget" name="tab_3">
        <attribute name="title">
@@ -743,10 +753,10 @@
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_2">
          <item>
-          <widget class="QTableView" name="tableView_4"/>
+          <widget class="QTableView" name="variety_place_table"/>
          </item>
          <item>
-          <widget class="QTableView" name="tableView_5"/>
+          <widget class="QTableView" name="variety_product_table"/>
          </item>
         </layout>
        </widget>
@@ -879,7 +889,7 @@
      <x>0</x>
      <y>0</y>
      <width>703</width>
-     <height>26</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuEditace">

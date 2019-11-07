@@ -6,6 +6,7 @@ Form::Form(QWidget *parent) :
     ui(new Ui::Form)
 {
     ui->setupUi(this);
+    this->setStyleSheet("background-color: ;");
     setWindowTitle("Oblíbené");
     setWindowIcon(QIcon(":/img/Favorite"));
 }
