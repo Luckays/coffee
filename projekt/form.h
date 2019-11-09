@@ -2,6 +2,10 @@
 #define FORM_H
 #include <QIcon>
 #include <QWidget>
+#include <QtSql>
+#include <QSqlQuery>
+#include <QSqlDatabase>
+#include <QSqlTableModel>
 
 namespace Ui {
 class Form;
@@ -17,6 +21,7 @@ public:
 
 private:
     Ui::Form *ui;
+    QSqlQueryModel *model_fav;
 private slots:
     void on_close_clicked();
 };

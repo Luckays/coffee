@@ -40,7 +40,11 @@ private:
     QSqlQueryModel * model_product;
       QSqlQueryModel * model_product2;
     QSqlQueryModel *model_place ;
+QString favorite,produkt,process,chut,intenz,acid,roast,variet,plac_e,pr_id,pl_id,va_id;
 
+QString pla_ce, vyskaod,vyskado,klimpas,zeme,oblastid,zemeid;
+
+QString odruda,popis,odolnost,chuto,vznik,region,odrudaid;
 
 private slots:
     void on_show_product_clicked();
@@ -53,14 +57,18 @@ private slots:
     void on_show_product_3_clicked();
     void on_show_variety_3_clicked();
     void on_show_place_3_clicked();
-    void on_open_favorite_triggered();
-    void on_close_all_triggered();
+    void on_open_favorite_3_triggered();
+    void on_close_all_3_triggered();
     void on_actionGray_triggered();
     void on_actionNormal_triggered();
     void on_actionRed_triggered();
     void on_comboBox_place_currentTextChanged(const QString &place);
     void on_comboBox_variety_currentTextChanged(const QString &variety);
-   // void on_place_variety_table_activated(const QModelIndex &index);
+    void on_comboBox_product_currentTextChanged(const QString &place);
+    void on_variety_place_table_activated(const QModelIndex &index);
+    void on_pridatpr_clicked();
+    void on_add_place_clicked();
+    void on_add_variety_clicked();
 };
 
 #endif // MAINWINDOW_H
