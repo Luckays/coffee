@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>386</width>
-    <height>362</height>
+    <height>446</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,8 +16,8 @@
   <widget class="QPushButton" name="close">
    <property name="geometry">
     <rect>
-     <x>290</x>
-     <y>330</y>
+     <x>300</x>
+     <y>410</y>
      <width>75</width>
      <height>23</height>
     </rect>
@@ -196,6 +196,19 @@
    </property>
    <property name="text">
     <string>do</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_map">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>210</y>
+     <width>331</width>
+     <height>191</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>img map</string>
    </property>
   </widget>
  </widget>

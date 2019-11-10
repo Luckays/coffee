@@ -13,5 +13,7 @@
         <file alias="inten4">img/intenzita_4a.png</file>
         <file alias="inten5">img/intenzita_5a.png</file>
         <file alias="inten0">img/intenzita_0a.jpg</file>
+        <file alias="brazilie">mapa/bolívie_s.jpg</file>
+        <file alias="ram">mapa/rám.jpg</file>
     </qresource>
 </RCC>

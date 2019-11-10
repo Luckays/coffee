@@ -6,6 +6,7 @@
 #include <QSqlQuery>
 #include <QSqlDatabase>
 #include <QSqlTableModel>
+#include "qmessagebox.h"
 
 namespace Ui {
 class Form;
@@ -22,8 +23,11 @@ public:
 private:
     Ui::Form *ui;
     QSqlQueryModel *model_fav;
+
 private slots:
     void on_close_clicked();
+    void rowChanged(QModelIndex index, QModelIndex);
+    void on_delete_2_clicked();
 };
 
 #endif // FORM_H

@@ -42,7 +42,7 @@
     <string>Zavřít</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="delete_2">
    <property name="geometry">
     <rect>
      <x>210</x>
@@ -56,6 +56,16 @@
    </property>
    <property name="text">
     <string>Odebrat</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit">
+   <property name="geometry">
+    <rect>
+     <x>22</x>
+     <y>430</y>
+     <width>171</width>
+     <height>22</height>
+    </rect>
    </property>
   </widget>
  </widget>

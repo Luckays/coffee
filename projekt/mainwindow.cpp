@@ -647,10 +647,13 @@ QString seli = query->value(0).toString();
 QString insert = "INSERT INTO oblibene (produkt_oblibene) VALUES ('"+seli+"')";
 query->clear();
 query->prepare(insert);
-if(!query->exec())
+if(!query->exec()){
     qDebug() << "ERROR" << query->lastError();
-else
+    QMessageBox::information(0,"Přidáno","Produkt je již mezi oblíbenými");
+}else{
     qDebug() << "Success";
+    QMessageBox::information(0,"Přidáno","Produkt byl přidán mezi oblíbené");
+}
 }
 
 
@@ -686,10 +689,13 @@ QString odidi = query2->value(0).toString();
 QString insert = "INSERT INTO produkty (produkt,produkt_id,zpracovani,kyselost,intenzita,prazeni,odruda,oblast,chut,oblast_id,odruda_id) VALUES ('"+produkt+"','"+pr_id+"','"+process+"','"+acid+"','"+intenz+"','"+roast+"','"+variet+"','"+plac_e+"','"+chut+"','"+obidi+"','"+odidi+"')";
 query->clear();
 query->prepare(insert);
-if(!query->exec())
+if(!query->exec()) {
     qDebug() << "ERROR" << query->lastError();
-else
+    QMessageBox::information(0,"Nepřidáno","Produkt nebyl přidán. Zkontrolujte správnost údajů");}
+else{
     qDebug() << "Success";
+    QMessageBox::information(0,"Přidáno","Produkt byl přidán");
+}
 
 ui->lineEdit_produkt->clear();
 ui->lineEdit_produkt_id->clear();
@@ -727,11 +733,13 @@ QString obidi = query1->value(0).toString();
 QString insert = "INSERT INTO oblasti (oblast,vyska_od,vyska_do,klim_pas,zeme_oblasti,oblast_id,zeme_id) VALUES ('"+pla_ce+"','"+vyskaod+"','"+vyskado+"','"+klimpas+"','"+zeme+"','"+oblastid+"','"+obidi+"')";
 query->clear();
 query->prepare(insert);
-if(!query->exec())
+if(!query->exec()) {
     qDebug() << "ERROR" << query->lastError();
-else
+    QMessageBox::information(0,"Nepřidáno","Oblast nebyla přidána. Zkontrolujte správnost údajů");}
+else{
     qDebug() << "Success";
-
+    QMessageBox::information(0,"Přidáno","Oblast byla přidána");
+}
 
 ui->lineEdit_oblast->clear();
 ui->lineEdit_vyskaod->clear();
@@ -757,11 +765,13 @@ QSqlQuery *query = new QSqlQuery();
 QString insert = "INSERT INTO odrudy (odruda,popis,odolnost,chut_odrudy,vznik,region,odruda_id) VALUES ('"+odruda+"','"+popis+"','"+odolnost+"','"+chuto+"','"+vznik+"','"+region+"','"+odrudaid+"')";
 query->clear();
 query->prepare(insert);
-if(!query->exec())
+if(!query->exec()) {
     qDebug() << "ERROR" << query->lastError();
-else
+    QMessageBox::information(0,"Nepřidáno","Odrůda nebyla přidána. Zkontrolujte správnost údajů");}
+else{
     qDebug() << "Success";
-
+    QMessageBox::information(0,"Přidáno","Odrůda byla přidána");
+}
 
 ui->lineEdit_odruda->clear();
 ui->lineEdit_chut->clear();
