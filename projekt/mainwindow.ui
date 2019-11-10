@@ -846,7 +846,7 @@
        </widget>
        <widget class="QLineEdit" name="lineEdit_pr2">
         <property name="enabled">
-         <bool>true</bool>
+         <bool>false</bool>
         </property>
         <property name="geometry">
          <rect>
@@ -859,7 +859,7 @@
        </widget>
        <widget class="QLineEdit" name="lineEdit_va2">
         <property name="enabled">
-         <bool>true</bool>
+         <bool>false</bool>
         </property>
         <property name="geometry">
          <rect>
@@ -977,7 +977,7 @@
        </widget>
        <widget class="QLineEdit" name="lineEdit_pl3">
         <property name="enabled">
-         <bool>true</bool>
+         <bool>false</bool>
         </property>
         <property name="geometry">
          <rect>
@@ -990,7 +990,7 @@
        </widget>
        <widget class="QLineEdit" name="lineEdit_pr3">
         <property name="enabled">
-         <bool>true</bool>
+         <bool>false</bool>
         </property>
         <property name="geometry">
          <rect>

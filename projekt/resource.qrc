@@ -7,5 +7,11 @@
         <file alias="mainIconuk">depositphotos_131627312-stock-illustration-coffee-bean-vector-icon.jpg</file>
         <file alias="Favorite">645px-Love_Heart_SVG.svg.png</file>
         <file alias="mainIcon">69686213_2664276680299156_4339327440514973696_n.jpg</file>
+        <file alias="inten1">img/intenzita_1a.png</file>
+        <file alias="inten2">img/intenzita_2a.png</file>
+        <file alias="inten3">img/intenzita_3a.png</file>
+        <file alias="inten4">img/intenzita_4a.png</file>
+        <file alias="inten5">img/intenzita_5a.png</file>
+        <file alias="inten0">img/intenzita_0a.jpg</file>
     </qresource>
 </RCC>

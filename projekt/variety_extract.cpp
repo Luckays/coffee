@@ -11,7 +11,7 @@ variety_extract::variety_extract(int h,QWidget *parent) :
     setWindowIcon(QIcon(":/img/mainIcon"));
     hh = h;
     QString H = QString::number(hh);
-    QString dotazA = "SELECT odruda,popis,chut_odrudy,vznik,region FROM odrudy WHERE odruda_id = %1";
+    QString dotazA = "SELECT odruda,popis,chut_odrudy,vznik,region,odolnost FROM odrudy WHERE odruda_id = %1";
     QSqlQuery dotaz (dotazA.arg(H));
 
     QString odruda;
@@ -19,6 +19,7 @@ variety_extract::variety_extract(int h,QWidget *parent) :
     QString chut;
     QString vznik;
     QString region;
+    QString odolnost;
 
     while (dotaz.next())
     {
@@ -27,7 +28,7 @@ variety_extract::variety_extract(int h,QWidget *parent) :
    chut = dotaz.value("chut_odrudy").toString();
    vznik = dotaz.value("vznik").toString();
    region = dotaz.value("region").toString();
-
+   odolnost = dotaz.value("odolnost").toString();
 
 }
       ui->lineEdit_var->setText(odruda);
@@ -35,6 +36,45 @@ variety_extract::variety_extract(int h,QWidget *parent) :
       ui->lineEdit_taste->setText(chut);
       ui->lineEdit_origin->setText(vznik);
       ui->lineEdit_region->setText(region);
+
+
+      if(odolnost == '1'){
+
+      QPixmap image(":/img/inten1");
+      ui->label_odolnost->setPixmap(image);
+
+         }
+      else if(odolnost == '2'){
+
+      QPixmap image(":/img/inten2");
+      ui->label_odolnost->setPixmap(image);
+
+      }
+      else if(odolnost == '3'){
+
+      QPixmap image(":/img/inten3");
+      ui->label_odolnost->setPixmap(image);
+
+      }
+      else if(odolnost == '4'){
+
+      QPixmap image(":/img/inten4");
+      ui->label_odolnost->setPixmap(image);
+
+      }
+      else if(odolnost == '5'){
+
+      QPixmap image(":/img/inten5");
+      ui->label_odolnost->setPixmap(image);
+
+      }
+      else if(odolnost == '-' or odolnost == NULL){
+
+      QPixmap image(":/img/inten0");
+      ui->label_odolnost->setPixmap(image);
+
+
+  }
 }
 variety_extract::~variety_extract()
 {

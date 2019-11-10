@@ -65,7 +65,10 @@ private slots:
     void on_comboBox_place_currentTextChanged(const QString &place);
     void on_comboBox_variety_currentTextChanged(const QString &variety);
     void on_comboBox_product_currentTextChanged(const QString &place);
-    void on_variety_place_table_activated(const QModelIndex &index);
+    void rowChanged_var_pl(QModelIndex index, QModelIndex);
+    void rowChanged_pl_var(QModelIndex index, QModelIndex);
+    void rowChanged_pl_pr(QModelIndex index, QModelIndex);
+    void rowChanged_var_pr(QModelIndex index, QModelIndex);
     void on_pridatpr_clicked();
     void on_add_place_clicked();
     void on_add_variety_clicked();

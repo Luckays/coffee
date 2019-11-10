@@ -9,7 +9,6 @@ MainWindow::MainWindow(QWidget *parent)
 , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-connect(ui->variety_place_table->model(), SIGNAL(clicked(const QModelIndex &)), this, SLOT(onTableClicked(const QModelIndex &)));
     QString path = "../kava.db";
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
     db.setDatabaseName(path);
@@ -510,6 +509,11 @@ void MainWindow::on_open_favorite_3_triggered(){
        ui->place_variety_table->resizeColumnsToContents();
 
 
+        connect(ui->place_variety_table->selectionModel(), SIGNAL(currentRowChanged(QModelIndex,QModelIndex)),
+                this, SLOT(rowChanged_pl_var(QModelIndex, QModelIndex)));
+
+
+
        QString vyber_pr="SELECT DISTINCT produkty.produkt_id AS ID, produkty.produkt AS Produkt FROM produkty JOIN odrudy on odrudy.odruda_id = produkty.odruda_id JOIN oblasti on produkty.oblast_id = oblasti.oblast_id WHERE oblasti.oblast = '"+place+"'";
        QSqlQuery* uni_p = new QSqlQuery;
        uni_p -> prepare(vyber_pr);
@@ -520,6 +524,13 @@ void MainWindow::on_open_favorite_3_triggered(){
        ui->place_product_table->setModel(model_product);
        ui->place_product_table->show();
        ui->place_product_table->resizeColumnsToContents();
+
+
+       connect(ui->place_product_table->selectionModel(), SIGNAL(currentRowChanged(QModelIndex,QModelIndex)),
+               this, SLOT(rowChanged_pl_pr(QModelIndex, QModelIndex)));
+
+       /*connect(ui->place_product_table->selectionModel(), SIGNAL(currentRowChanged(QModelIndex,QModelIndex)),
+               this, SLOT(rowChanged(QModelIndex, QModelIndex)));*/
 
 
        QString k = ui->comboBox_place->currentText();
@@ -592,6 +603,9 @@ void MainWindow::on_comboBox_variety_currentTextChanged(const QString &variety)
     ui->variety_place_table->show();
     ui->variety_place_table->resizeColumnsToContents();
 
+    connect(ui->variety_place_table->selectionModel(), SIGNAL(currentRowChanged(QModelIndex,QModelIndex)),
+            this, SLOT(rowChanged_var_pl(QModelIndex, QModelIndex)));
+
 
     QString vyber_pr="SELECT DISTINCT produkty.produkt_id AS ID, produkty.produkt AS Produkt FROM produkty JOIN odrudy on odrudy.odruda_id = produkty.odruda_id JOIN oblasti on produkty.oblast_id = oblasti.oblast_id WHERE odrudy.odruda = '"+variety+"'";
     QSqlQuery* uni_p = new QSqlQuery;
@@ -603,6 +617,9 @@ void MainWindow::on_comboBox_variety_currentTextChanged(const QString &variety)
     ui->variety_product_table->setModel(model_product2);
     ui->variety_product_table->show();
     ui->variety_product_table->resizeColumnsToContents();
+
+    connect(ui->variety_product_table->selectionModel(), SIGNAL(currentRowChanged(QModelIndex,QModelIndex)),
+            this, SLOT(rowChanged_var_pr(QModelIndex, QModelIndex)));
 
     QString k = ui->comboBox_variety->currentText();
 
@@ -756,15 +773,36 @@ ui->lineEdit_odruda_id->clear();
 ui->lineEdit_vznik->clear();
 
 }
- void MainWindow::on_variety_place_table_activated(const QModelIndex &index)
- {QString EDIT = "SELECT produkt FROM produkty WHERE produkt = 'SUMATRA LINTONG'";
-     QSqlQuery *query = new QSqlQuery();
-         query -> prepare(EDIT);
-         query -> exec();
+ void MainWindow::rowChanged_var_pl(QModelIndex index, QModelIndex)
+ {
 
          ui->variety_place_table->setModel(model_place);
          QString naze = ui->variety_place_table->model()->index(index.row(),0).data().toString();
+         ui->lineEdit_pl3->setText(naze);
+ }
+
+ void MainWindow::rowChanged_var_pr(QModelIndex index, QModelIndex)
+ {
+
+         ui->variety_product_table->setModel(model_product2);
+         QString naze = ui->variety_product_table->model()->index(index.row(),0).data().toString();
          ui->lineEdit_pr3->setText(naze);
+ }
+
+ void MainWindow::rowChanged_pl_var(QModelIndex index, QModelIndex)
+ {
+
+         ui->place_variety_table->setModel(model_variety);
+         QString naze = ui->place_variety_table->model()->index(index.row(),0).data().toString();
+         ui->lineEdit_va2->setText(naze);
+ }
+
+ void MainWindow::rowChanged_pl_pr(QModelIndex index, QModelIndex)
+ {
+
+         ui->place_product_table->setModel(model_product);
+         QString naze = ui->place_product_table->model()->index(index.row(),0).data().toString();
+         ui->lineEdit_pr2->setText(naze);
  }
 
 
