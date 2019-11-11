@@ -5,16 +5,18 @@
 product_extract::product_extract(int h,QWidget *parent)
     : QDialog(parent),
    ui(new Ui::product_extract)
-{
+{//open favorite, set colour, title and icon
     ui->setupUi(this);
     this->setStyleSheet("background-color: ;");
     setWindowTitle("Výpis produktu");
     setWindowIcon(QIcon(":/img/mainIcon"));
 
+//load information from mainwindow
     hh = h;
     QString H = QString::number(hh);
-    QString dotazA = "SELECT produkt, zpracovani,chut,prazeni,odrudy.odruda,oblasti.oblast,produkty.intenzita,produkty.kyselost FROM produkty JOIN oblasti ON oblasti.oblast_id = produkty.oblast_id JOIN odrudy ON odrudy.odruda_id = produkty.odruda_id WHERE produkt_id = %1";
 
+     // select information from database and display it
+    QString dotazA = "SELECT produkt, zpracovani,chut,prazeni,odrudy.odruda,oblasti.oblast,produkty.intenzita,produkty.kyselost FROM produkty JOIN oblasti ON oblasti.oblast_id = produkty.oblast_id JOIN odrudy ON odrudy.odruda_id = produkty.odruda_id WHERE produkt_id = %1";
      QSqlQuery dotaz (dotazA.arg(H));
 
      QString produkt;
@@ -45,7 +47,7 @@ product_extract::product_extract(int h,QWidget *parent)
     ui->label_kyselost->setText(kyselost);
     ui->textEdit->setText(chut);
     if(intenzite == '1'){
-
+//display pictures of intenzita
     QPixmap image(":/img/inten1");
     ui->label_int->setPixmap(image);
 
@@ -81,6 +83,7 @@ product_extract::product_extract(int h,QWidget *parent)
 
 
 }
+    //display pictures of kyselost
     if(kyselost == '1'){
 
     QPixmap image(":/img/inten1");
@@ -123,7 +126,7 @@ product_extract::~product_extract()
 {
     delete ui;
 }
-
+// button close
 void product_extract::on_close_clicked()
     {
         this->close();

@@ -6,14 +6,16 @@
 place_extract::place_extract(int h,QWidget *parent) :
     QDialog(parent),
     ui(new Ui::place_extract)
-{
+{//open favorite, set colour, title and icon
     ui->setupUi(this);
     this->setStyleSheet("background-color: ;");
     setWindowTitle("Výpis Odrůdy");
     setWindowIcon(QIcon(":/img/mainIcon"));
 
+    //load information from mainwindow
     hh = h;
     QString H = QString::number(hh);
+    // select information from database and display it
     QString dotazA = "SELECT oblast, vyska_od, vyska_do, klim_pas,zeme.zeme,rocni_produkce FROM oblasti JOIN zeme ON zeme.zeme_id = oblasti.zeme_id WHERE oblast_id = %1";
     QSqlQuery dotaz (dotazA.arg(H));
 
@@ -39,6 +41,8 @@ place_extract::place_extract(int h,QWidget *parent) :
     ui->lineEdit_country->setText(zeme);
     ui->lineEdit_production->setText(produkce);
 
+
+    // display map
     if(zeme == "Bolívie"){
 
     QPixmap image(":/img/bolivie");
@@ -243,6 +247,8 @@ place_extract::~place_extract()
 {
     delete ui;
 }
+
+// button close
 void place_extract::on_close_clicked()
     {
         this->close();

@@ -4,13 +4,15 @@
 variety_extract::variety_extract(int h,QWidget *parent) :
     QDialog(parent),
     ui(new Ui::variety_extract)
-{
+{//open favorite, set colour, title and icon
     ui->setupUi(this);
     this->setStyleSheet("background-color: ;");
     setWindowTitle("Výpis Odrůdy");
     setWindowIcon(QIcon(":/img/mainIcon"));
+    //load information from mainwindow
     hh = h;
     QString H = QString::number(hh);
+    // select information from database and display it
     QString dotazA = "SELECT odruda,popis,chut_odrudy,vznik,region,odolnost FROM odrudy WHERE odruda_id = %1";
     QSqlQuery dotaz (dotazA.arg(H));
 
@@ -37,7 +39,7 @@ variety_extract::variety_extract(int h,QWidget *parent) :
       ui->lineEdit_origin->setText(vznik);
       ui->lineEdit_region->setText(region);
 
-
+//display pictures of odolnost
       if(odolnost == '1'){
 
       QPixmap image(":/img/inten1");
@@ -80,6 +82,7 @@ variety_extract::~variety_extract()
 {
     delete ui;
 }
+// close button
 void variety_extract::on_close_clicked()
     {
         this->close();

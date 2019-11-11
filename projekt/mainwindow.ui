@@ -109,7 +109,7 @@
        <string>Kyselost</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_10">
+     <widget class="QLabel" name="label_32">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -631,7 +631,7 @@
        <cursorShape>PointingHandCursor</cursorShape>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
@@ -1122,16 +1122,6 @@
    <addaction name="menuNastaven"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <action name="close_all">
-   <property name="text">
-    <string>Konec</string>
-   </property>
-  </action>
-  <action name="active_depression">
-   <property name="text">
-    <string>Deprese</string>
-   </property>
-  </action>
   <action name="actionKr_sn_den">
    <property name="text">
     <string>Krásný den</string>
