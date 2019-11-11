@@ -9,7 +9,7 @@ place_extract::place_extract(int h,QWidget *parent) :
 {//open favorite, set colour, title and icon
     ui->setupUi(this);
     this->setStyleSheet("background-color: ;");
-    setWindowTitle("Výpis Odrůdy");
+    setWindowTitle("Výpis Oblasti");
     setWindowIcon(QIcon(":/img/mainIcon"));
 
     //load information from mainwindow
