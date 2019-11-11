@@ -53,6 +53,8 @@ QString smazat;
      ui->tableView->setModel(model_fav);
      ui->tableView->show();
      ui->tableView->resizeColumnsToContents();
+     connect(ui->tableView->selectionModel(), SIGNAL(currentRowChanged(QModelIndex,QModelIndex)),
+             this, SLOT(rowChanged(QModelIndex, QModelIndex)));
 }
 
 

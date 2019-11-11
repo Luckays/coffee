@@ -221,6 +221,13 @@ place_extract::place_extract(int h,QWidget *parent) :
     ui->label_map->setPixmap(image);
 
     }
+
+    else if(zeme== "Tanzanie"){
+
+    QPixmap image(":/img/tanzanie");
+    ui->label_map->setPixmap(image);
+
+    }
     else if(zeme == '-' or zeme == NULL){
 
     QPixmap image(":/img/ram");
@@ -228,6 +235,7 @@ place_extract::place_extract(int h,QWidget *parent) :
 
 
 }
+
 
 }
 

@@ -47,3 +47,5 @@ RESOURCES += \
 
 DISTFILES += \
     zrnkakava.png
+
+RC_ICONS = ikona.ico
