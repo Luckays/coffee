@@ -160,7 +160,7 @@ place_extract::place_extract(int h,QWidget *parent) :
     }
     else if(zeme == "Mexiko"){
 
-    QPixmap image(":/img/mexiko");
+    QPixmap image(":/img/mexico");
     ui->label_map->setPixmap(image);
 
     }
