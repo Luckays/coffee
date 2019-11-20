@@ -16,6 +16,7 @@
 #include <QPushButton>
 #include <QHBoxLayout>
 #include <QWidget>
+#include <QDesktopServices>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -72,6 +73,7 @@ private slots:
     void on_pridatpr_clicked();
     void on_add_place_clicked();
     void on_add_variety_clicked();
+    void on_open_triggered();
 };
 
 #endif // MAINWINDOW_H

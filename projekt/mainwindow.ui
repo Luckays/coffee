@@ -38,7 +38,7 @@
        <x>0</x>
        <y>0</y>
        <width>671</width>
-       <height>529</height>
+       <height>537</height>
       </rect>
      </property>
      <attribute name="label">
@@ -609,7 +609,7 @@
        <x>0</x>
        <y>0</y>
        <width>671</width>
-       <height>529</height>
+       <height>537</height>
       </rect>
      </property>
      <attribute name="label">
@@ -737,6 +737,19 @@
         </property>
         <property name="text">
          <string>ID</string>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="checkBox">
+        <property name="geometry">
+         <rect>
+          <x>150</x>
+          <y>270</y>
+          <width>70</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>CheckBox</string>
         </property>
        </widget>
       </widget>
@@ -1055,6 +1068,9 @@
     </property>
    </widget>
    <widget class="QRadioButton" name="set_normal">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>240</x>
@@ -1068,6 +1084,9 @@
     </property>
    </widget>
    <widget class="QRadioButton" name="set_gray">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>310</x>
@@ -1081,6 +1100,9 @@
     </property>
    </widget>
    <widget class="QRadioButton" name="set_red">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>370</x>
@@ -1100,7 +1122,7 @@
      <x>0</x>
      <y>0</y>
      <width>693</width>
-     <height>26</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuNastaven">
@@ -1116,37 +1138,13 @@
      <string>Soubor</string>
     </property>
     <addaction name="open_favorite_3"/>
+    <addaction name="open"/>
     <addaction name="close_all_3"/>
    </widget>
    <addaction name="menuSoubor"/>
    <addaction name="menuNastaven"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <action name="actionKr_sn_den">
-   <property name="text">
-    <string>Krásný den</string>
-   </property>
-  </action>
-  <action name="actionNuda">
-   <property name="text">
-    <string>Nuda</string>
-   </property>
-  </action>
-  <action name="actionTisk">
-   <property name="text">
-    <string>Tisk</string>
-   </property>
-  </action>
-  <action name="open_favorite">
-   <property name="text">
-    <string>Oblíbené</string>
-   </property>
-  </action>
-  <action name="open_settings">
-   <property name="text">
-    <string>Nastavení</string>
-   </property>
-  </action>
   <action name="actionNormal">
    <property name="text">
     <string>Normal</string>
@@ -1162,16 +1160,6 @@
     <string>Red</string>
    </property>
   </action>
-  <action name="open_favorite_2">
-   <property name="text">
-    <string>Oblíbené</string>
-   </property>
-  </action>
-  <action name="close_all_2">
-   <property name="text">
-    <string>Konec</string>
-   </property>
-  </action>
   <action name="open_favorite_3">
    <property name="text">
     <string>Oblíbené</string>
@@ -1180,6 +1168,11 @@
   <action name="close_all_3">
    <property name="text">
     <string>Konec</string>
+   </property>
+  </action>
+  <action name="open">
+   <property name="text">
+    <string>Nejbližší kavárna</string>
    </property>
   </action>
  </widget>

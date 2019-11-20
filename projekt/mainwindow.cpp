@@ -735,4 +735,13 @@ void MainWindow::rowChanged_pl_pr(QModelIndex index, QModelIndex)
     ui->lineEdit_pr2->setText(naze);
 }
 
+void MainWindow::on_open_triggered()
+{
+    QString link = "https://www.google.com/search?q=show+me+the+nearest+coffee+shop";
+    QDesktopServices::openUrl(QUrl(link));
+this->close();
+}
+
+
+
 //end of project
