@@ -2,7 +2,6 @@
 #include "form.h"
 #include "variety_extract.h"
 #include "place_extract.h"
-#include "dialog.h"
 #include <QIcon>
 #include <QtSql>
 #include <QSqlQuery>
